@@ -17,3 +17,6 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
+const contactsRoute = require('./routes/contacts');
+app.use('/contacts', contactsRoute);
