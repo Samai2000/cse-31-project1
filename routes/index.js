@@ -1,9 +1,11 @@
-const router = require('express').Router();
+const express = require('express');
+const router = express.Router();
 
-// Define the route
-router.get('/', (req, res) => {
-  res.send('Hello World');
-});
+// Import the users router
+const usersRouter = require('./users');
+
+// Mount the users router
+router.use('/users', usersRouter);
 
 // Export the router
 module.exports = router;
